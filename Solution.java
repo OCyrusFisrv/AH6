@@ -1,6 +1,10 @@
 import java.util.List;
-
+import java.util.ArrayList;
 import javax.xml.transform.Source;
+
+// Write a method, linkedListValues, that takes in the head of a linked list 
+// as an argument. The method should return an List containing all values of
+// the nodes in the linked list.
 
 class Node<T> {
   T val;
@@ -14,8 +18,15 @@ class Node<T> {
 
 class Solution {
   public static List<String> linkedListValues(Node<String> head) {
-    // todo
-    return;
+    ArrayList<String> c = new ArrayList<String>();
+    while (head.val != null ) {
+      c.add(head.val);
+      if (head.next == null)
+      break;
+    }
+    head = head.next;
+
+    return c;
   }
 
   public static void main() {
@@ -29,7 +40,8 @@ class Solution {
 
     // a -> b -> c -> d
 
-    Solution.linkedListValues(a); 
+    // Solution.linkedListValues(a); 
+    System.out.println(Solution.linkedListValues(a));
     // -> [ "a", "b", "c", "d" ]
   }
 }
